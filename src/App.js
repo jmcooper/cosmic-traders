@@ -1,15 +1,87 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  // this.state = {
+  //   cart: []
+  // }
+
+  let cart = []
+  let products = [
+    {
+      name: 'Double-Retro Laser Blammers',
+      price: 5999,
+      image: 'base-rocket.png'
+    },
+    {
+      name: 'Power Crystals',
+      price: 1999,
+      image: 'head-cyclops-shredder.png'
+    },
+    {
+      name: 'Warp Core',
+      price: 29995,
+      image: 'base-spring.png'
+    },
+    {
+      name: 'Warp Core',
+      price: 29995,
+      image: 'base-spring.png'
+    },
+    {
+      name: 'Warp Core',
+      price: 29995,
+      image: 'base-spring.png'
+    },
+    {
+      name: 'Warp Core',
+      price: 29995,
+      image: 'base-spring.png'
+    },
+  ]
+
+  const toCurrencyFormat = (value) => {
+    return value.toLocaleString('en-US', {style: 'currency', currency: 'USD'})
+  }
+
+  const renderProduct = (product) => {
+    return (
+      <li className="product">
+        <img src={require(`./images/${product.image}`)} alt="rocket"/>
+        <h2>{product.name}</h2>
+        <div className="price-line">
+          <h3>{toCurrencyFormat(product.price)}</h3>
+          <button>Add to cart</button>
+        </div>
+      </li>
+    )
+  }
+
+  const renderCartItem = (product) => {
+    return (
+      <li className="cart-item">
+        <img src={require(`./images/${product.image}`)} />
+      </li>
+    )
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Welcome to cosmic traders!
-        </p>
-      </header>
+    <div className="content">
+        <div className="main-left">
+          <h1 className="section-header">Outpost</h1>
+          <ul className="products">
+            {
+              products.map((product) => renderProduct(product))
+            }
+          </ul>
+        </div>
+        <div className="right-sidebar">
+          <h1 className="section-header">Cart</h1>
+          { cart.length > 0 
+            ? <p>There are no items in your cart</p>
+            : <ul> { cart.map((product) => renderCartItem(product)) }</ul>
+          }
+        </div>
     </div>
   );
 }

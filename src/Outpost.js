@@ -41,9 +41,7 @@ function Outpost() {
   const [cart, setCart] = useState([]);
 
   let handleAddToCart = (product) => {
-    cart.push(product)
-    console.log(cart)
-    setCart(cart)
+    setCart([...cart, product])
   }
   
   return (

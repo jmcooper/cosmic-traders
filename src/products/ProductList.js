@@ -6,7 +6,7 @@ function ProductList(props) {
   return (
     <ul className={styles.products}>
       {
-        props.products.map((productToRender) => <Product product={productToRender}/>)
+        props.products.map((productToRender, i) => <Product product={productToRender} key={i}/>)
       }
     </ul>
 

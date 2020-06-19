@@ -1,12 +1,8 @@
 import React from 'react';
 import styles from './Product.module.css';
-
-const toCurrencyFormat = (value) => {
-  return value.toLocaleString('en-US', {style: 'currency', currency: 'USD'})
-}
+import { toCurrencyFormat } from '../utils/format-utils'
 
 function Product(props) {
-  console.log('props', props)
   return (
     <li className={styles.product}>
       <img src={require(`../images/${props.product.image}`)} alt="rocket"/>

@@ -1,8 +1,8 @@
 import React from 'react'
 import ProductList from './products/ProductList'
 import styles from './Outpost.module.css'
+import Cart from './checkout/Cart'
 
-let cart = []
 let products = [
   {
     name: 'Double-Retro Laser Blammers',
@@ -36,13 +36,11 @@ let products = [
   },
 ]
 
-const renderCartItem = (product) => {
-  return (
-    <li className="cart-item">
-      <img src={require(`./images/${product.image}`)} />
-    </li>
-  )
-}
+let cart = [
+  products[1],
+  products[2]
+]
+
 
 function Outpost() {
   return (
@@ -53,10 +51,7 @@ function Outpost() {
       </div>
       <div className={styles.rightSidebar}>
         <h1 className="section-header">Cart</h1>
-        { cart.length > 0 
-          ? <p>There are no items in your cart</p>
-          : <ul> { cart.map((product) => renderCartItem(product)) }</ul>
-        }
+        <Cart cart={cart}/>
       </div>
     </React.Fragment>
   )

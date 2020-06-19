@@ -1,0 +1,26 @@
+.cart {
+  background-color: #353941;
+  padding: 20px;
+  font-size:18px;
+}
+
+.cartItem {
+  display:flex;
+  justify-content: space-between;
+  padding:10px;
+}
+
+.cartItem img {
+  width:50px;
+}
+
+.flexCenter {
+  display: flex;
+  align-items: center;
+}
+
+.checkoutButton {
+  font-size:24px;
+  width: 100%;
+  padding: 15px 10px;
+}

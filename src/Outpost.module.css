@@ -5,10 +5,5 @@
 }
 
 .rightSidebar {
-  width: 400px;
-}
-
-.cartItem {
-  display:flex;
-  justify-content: space-between;
+  min-width:400px;
 }

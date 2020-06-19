@@ -6,7 +6,9 @@ function ProductList(props) {
   return (
     <ul className={styles.products}>
       {
-        props.products.map((productToRender, i) => <Product product={productToRender} key={i}/>)
+        props.products.map((productToRender, i) => {
+          return <Product product={productToRender} onAddToCart={props.onAddToCart} key={i}/>
+        })
       }
     </ul>
 

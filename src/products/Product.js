@@ -9,7 +9,7 @@ function Product(props) {
       <h2 className={styles.title}>{props.product.name}</h2>
       <div className={styles.priceLine}>
         <h3 className={styles.price}>{toCurrencyFormat(props.product.price)}</h3>
-        <button className="button">Add to cart</button>
+        <button className="button" onClick={() => props.onAddToCart(props.product) }>Add to cart</button>
       </div>
     </li>
   )

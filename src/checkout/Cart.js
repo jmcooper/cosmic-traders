@@ -13,12 +13,15 @@ const renderCartItem = (product, i) => {
 }
 
 function Cart(props) {
+  console.log('render', props)
   return (
     <div className={styles.cart}>
-      <button className={`button ${styles.checkoutButton}`}>Checkout</button>
       { props.cart.length === 0 
         ? <span>There are no items in your cart</span>
-        : <ul> { props.cart.map((product, i) => renderCartItem(product, i)) }</ul> }
+        : <React.Fragment>
+            <button className={`button ${styles.checkoutButton}`}>Checkout</button>
+            <ul> { props.cart.map((product, i) => renderCartItem(product, i)) }</ul>
+            </React.Fragment> }
     </div>
   )
 }

@@ -13,7 +13,6 @@ const renderCartItem = (product, i) => {
 }
 
 function Cart(props) {
-  console.log('render', props)
   return (
     <div className={styles.cart}>
       { props.cart.length === 0 

@@ -1,0 +1,14 @@
+.mainLeft {
+  flex-grow: 1;
+  min-width: 900px;
+  margin-right: 10px;
+}
+
+.rightSidebar {
+  width: 400px;
+}
+
+.cartItem {
+  display:flex;
+  justify-content: space-between;
+}

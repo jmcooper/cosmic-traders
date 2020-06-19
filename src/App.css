@@ -12,33 +12,11 @@ ul {
   color:#ccc;
 } 
 
-.main-left {
-  flex-grow: 1;
-  min-width: 900px;
-  margin-right: 10px;
-}
-
-.right-sidebar {
-  width: 400px;
-}
-
 .section-header {
   background-color:#353941;
   display: flex;
   justify-content: center;
   padding: 10px;
-}
-
-.products {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-}
-
-
-.cart-item {
-  display:flex;
-  justify-content: space-between;
 }
 
 .button {

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Product.css';
+import styles from './Product.module.css';
 
 const toCurrencyFormat = (value) => {
   return value.toLocaleString('en-US', {style: 'currency', currency: 'USD'})
@@ -8,12 +8,12 @@ const toCurrencyFormat = (value) => {
 function Product(props) {
   console.log('props', props)
   return (
-    <li className="product">
+    <li className={styles.product}>
       <img src={require(`../images/${props.product.image}`)} alt="rocket"/>
-      <h2 className="title">{props.product.name}</h2>
-      <div className="price-line">
-        <h3 className="price">{toCurrencyFormat(props.product.price)}</h3>
-        <button class="button">Add to cart</button>
+      <h2 className={styles.title}>{props.product.name}</h2>
+      <div className={styles.priceLine}>
+        <h3 className={styles.price}>{toCurrencyFormat(props.product.price)}</h3>
+        <button className="button">Add to cart</button>
       </div>
     </li>
   )

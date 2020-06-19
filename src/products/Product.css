@@ -1,0 +1,27 @@
+.product {
+  display: flex;
+  background-color:#353941;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 30px;
+  justify-content:space-between;
+}
+.title {
+  font-size: 18px;
+}
+
+.product img {
+  width: 150px;
+} 
+
+.price-line {
+  display: flex;
+  font-size: 22px;
+  justify-content: space-between;
+  width:100%;
+  margin:10px;
+}
+
+.price {
+  margin:0;
+}

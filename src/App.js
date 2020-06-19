@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Product from './products/Product'
 
 function App() {
   // this.state = {
@@ -40,23 +41,6 @@ function App() {
     },
   ]
 
-  const toCurrencyFormat = (value) => {
-    return value.toLocaleString('en-US', {style: 'currency', currency: 'USD'})
-  }
-
-  const renderProduct = (product) => {
-    return (
-      <li className="product">
-        <img src={require(`./images/${product.image}`)} alt="rocket"/>
-        <h2>{product.name}</h2>
-        <div className="price-line">
-          <h3>{toCurrencyFormat(product.price)}</h3>
-          <button>Add to cart</button>
-        </div>
-      </li>
-    )
-  }
-
   const renderCartItem = (product) => {
     return (
       <li className="cart-item">
@@ -71,7 +55,7 @@ function App() {
           <h1 className="section-header">Outpost</h1>
           <ul className="products">
             {
-              products.map((product) => renderProduct(product))
+              products.map((productToRender) => <Product product={productToRender}/>)
             }
           </ul>
         </div>

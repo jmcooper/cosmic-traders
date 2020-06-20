@@ -1,4 +1,6 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
+
 import styles from './Cart.module.css'
 import { toCurrencyFormat } from '../utils/format-utils'
 
@@ -12,15 +14,30 @@ const renderCartItem = (product, i) => {
   )
 }
 
+const getCartTotal = (cart) => {
+  return toCurrencyFormat(cart.reduce((sum, cur) => sum + (cur.price || 0), 0))
+}
+
 function Cart(props) {
+  let location = useLocation()
   return (
     <div className={styles.cart}>
       { props.cart.length === 0 
         ? <span>There are no items in your cart</span>
         : <React.Fragment>
-            <button className={`button ${styles.checkoutButton}`}>Checkout</button>
-            <ul> { props.cart.map((product, i) => renderCartItem(product, i)) }</ul>
-            </React.Fragment> }
+            { location.pathname !== '/checkout' && 
+              <button className={`button ${styles.checkoutButton}`}>Checkout</button> 
+            }
+            <ul> 
+              { props.cart.map((product, i) => renderCartItem(product, i)) }
+              <li className={styles.cartTotal}>
+                <div className={styles.totalLabel}>Total:</div> 
+                <div>{getCartTotal(props.cart)}</div>
+              </li>
+            </ul>
+          </React.Fragment> 
+      }
+
     </div>
   )
 }

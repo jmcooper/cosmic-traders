@@ -1,0 +1,28 @@
+.address {
+  background-color: #353941;
+  padding: 20px;
+  font-size:18px;
+}
+
+.inputGroup {
+  display:flex;
+  align-items: center;
+}
+
+.inputGroup label {
+  flex: 0 0 150px;
+  text-align: right;
+}
+
+.inputGroup input {
+  width: 350px;
+}
+
+.addressEdit {
+  display: flex;
+  align-items:top;
+}
+
+.addressDisplay {
+  width:90%;
+}

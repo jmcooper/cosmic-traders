@@ -1,0 +1,25 @@
+.inputGroup {
+  display:flex;
+  align-items: center;
+}
+
+.inputGroup label {
+  flex: 0 0 150px;
+  text-align: right;
+}
+
+.inputGroup input {
+  width: 350px;
+}
+
+.save {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.save button {
+  margin-top: 10px;
+  margin-right: 35px;
+  padding-left: 20px;
+  padding-right: 20px;
+}

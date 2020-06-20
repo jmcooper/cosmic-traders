@@ -11,7 +11,6 @@ function ProductList(props) {
         })
       }
     </ul>
-
   )
 }
 

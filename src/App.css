@@ -8,6 +8,12 @@ ul {
   list-style: none;
 }
 
+input {
+  font-size: 18px;
+  padding: 5px;
+  margin: 10px;
+}
+
 .content {
   display: flex;
   color:#ccc;

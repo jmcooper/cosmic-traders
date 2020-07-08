@@ -10,7 +10,7 @@ function AddressEdit(props) {
   useEffect(() => {
     if (!editing)
       setAddress(props.address)
-  })
+  }, [setAddress, editing, props.address])
 
   const handleInputChange = (event) => {
     setEditing(true)

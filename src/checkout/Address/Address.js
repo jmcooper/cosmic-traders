@@ -18,7 +18,7 @@ function Address(props) {
         ? <AddressEdit billing={props.billing} address={props.address} onAddressUpdated={updateAddress} />
         : <div className={styles.addressDisplay}>
             <AddressDisplay address={props.address}/>
-            <span><a href="" onClick={() => setEditMode(true)}>Change</a></span>
+            <span><button className="link-button" onClick={() => setEditMode(true)}>Change</button></span>
           </div>
       }
     </div>

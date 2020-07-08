@@ -47,3 +47,17 @@ a:hover {
 .button:hover {
   color: #2d6f81;
 }
+
+.link-button {
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  color: #4098AF;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.link-button:hover {
+  color: #5AB2C9
+}

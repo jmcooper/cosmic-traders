@@ -37,7 +37,11 @@ let products = [
   },
 ]
 function Checkout() {
-  let [ addresses, setAddresses ] = useState({shippingAddress: {}, billingAddress: {}})
+  let emptyAddress = {name: '', address: '', city:'', state:'', postalCode:''}
+  let [ addresses, setAddresses ] = useState(
+    { shippingAddress: Object.assign({}, emptyAddress), 
+      billingAddress: Object.assign({}, emptyAddress) }
+  )
 
   function updateShippingAddress(shippingAddress) {
     setAddresses(Object.assign({}, addresses, {shippingAddress: shippingAddress}))
@@ -54,7 +58,7 @@ function Checkout() {
       <h2 className={`section-header ${styles.sectionHeader}`}>Shipping Address</h2>
       <Address address={addresses.shippingAddress} onAddressUpdated={updateShippingAddress} />
       <h2 className={`section-header ${styles.sectionHeader}`}>Billing Address</h2>
-      {/* <Address address={addresses.billingAddress} billing="billing" onAddressUpdated={updateBillingAddress} /> */}
+      <Address address={addresses.billingAddress} billing="billing" onAddressUpdated={updateBillingAddress} />
     </div>
   )
 }

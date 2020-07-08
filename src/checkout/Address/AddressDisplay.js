@@ -1,9 +1,6 @@
 import React from 'react'
 
-import formStyles from './FormStyles.module.css'
-
 function AddressDisplay(props) {
-  console.log(props.address)
   return (
     <div>
         <div>{props.address.name}</div>

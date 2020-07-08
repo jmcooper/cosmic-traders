@@ -14,6 +14,14 @@ input {
   margin: 10px;
 }
 
+a {
+  color: #4098AF;
+}
+
+a:hover {
+  color: #5AB2C9;
+}
+
 .content {
   display: flex;
   color:#ccc;

@@ -7,19 +7,18 @@ import styles from './Address.module.css'
 function Address(props) {
   const [editMode, setEditMode] = useState(true)
 
-  console.log(props.billing, props.address)
   function updateAddress(address) {
-    // setEditMode(false)
     props.onAddressUpdated(address)
+    setEditMode(false)
   }
 
   return (
-    <div class={styles.address}>
+    <div className={styles.address}>
       { editMode 
         ? <AddressEdit billing={props.billing} address={props.address} onAddressUpdated={updateAddress} />
-        : <div className={styles.addressEdit}>
-            <AddressDisplay address={props.address} className={styles.addressDisplay} />
-            <button className="button" onClick={setEditMode(true)}>Change</button>
+        : <div className={styles.addressDisplay}>
+            <AddressDisplay address={props.address}/>
+            <span><a href="" onClick={() => setEditMode(true)}>Change</a></span>
           </div>
       }
     </div>

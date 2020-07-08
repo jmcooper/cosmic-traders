@@ -38,7 +38,8 @@ let products = [
 ]
 
 function Outpost() {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState([])
+
 
   let handleAddToCart = (product) => {
     setCart([...cart, product])

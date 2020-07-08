@@ -11,3 +11,11 @@
 .inputGroup input {
   width: 350px;
 }
+
+.displayGroup {
+  display:flex;
+  margin: 5px 0;
+}
+
+.displayGroup span {
+}

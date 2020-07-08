@@ -1,43 +1,53 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import formStyles from './FormStyles.module.css'
 import styles from './AddressEdit.module.css'
 
 function AddressEdit(props) {
-  const foo = Object.assign({}, props.address)
-  const [ address, setAddress ] = useState(foo)
+  const [ address, setAddress ] = useState(Object.assign({}, props.address))
+  const [ editing, setEditing ] = useState(false)
 
-  console.log('ae', props.billing, props.address, address)
+  useEffect(() => {
+    if (!editing)
+      setAddress(props.address)
+  })
+
   const handleInputChange = (event) => {
+    setEditing(true)
     const newAddress = {...address}
     newAddress[event.target.name] = event.target.value
     setAddress(newAddress)
   }
 
+  function saveAddress() {
+    setEditing(false)
+    props.onAddressUpdated(address)
+  }
+
   return (
     <div>
       <div className={formStyles.inputGroup}>
-        <label for="name">Name:</label>
+        <label htmlFor="name">Name:</label>
         <input name="name" onChange={handleInputChange} value={address.name}/>
       </div>
       <div className={formStyles.inputGroup}>
-        <label for="address">Address:</label>
+        <label htmlFor="address">Address:</label>
         <input name="address" onChange={handleInputChange} value={address.address}/>
       </div>
       <div className={formStyles.inputGroup}>
-        <label for="city">City:</label>
+        <label htmlFor="city">City:</label>
         <input name="city" onChange={handleInputChange} value={address.city}/>
       </div>
       <div className={formStyles.inputGroup}>
-        <label for="state">State/Province:</label>
+        <label htmlFor="state">State/Province:</label>
         <input name="state" onChange={handleInputChange} value={address.state}/>
       </div>
       <div className={formStyles.inputGroup}>
-        <label for="postal-code">Postal Code:</label>
-        <input name="postal-code" onChange={handleInputChange} value={address.postalCode}/>
+        <label htmlFor="postalCode">Postal Code:</label>
+        <input name="postalCode" onChange={handleInputChange} value={address.postalCode}/>
       </div>
-      <div class={styles.save}>
-        <button className="button" onClick={() => props.onAddressUpdated(address)}>Save</button>
+      <div className={styles.save}>
+        <button className="button" onClick={saveAddress}>Save</button>
       </div>
     </div>
   )

@@ -35,6 +35,9 @@ a:hover {
 }
 
 .button {
+  display: block;
+  text-decoration: none;
+  text-align: center;
   padding:10px;
   font-size:14px;
   background-color: #4098AF;

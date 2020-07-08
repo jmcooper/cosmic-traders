@@ -26,7 +26,7 @@ function Cart(props) {
         ? <span>There are no items in your cart</span>
         : <React.Fragment>
             { location.pathname !== '/checkout' && 
-              <button className={`button ${styles.checkoutButton}`}>Checkout</button> 
+              <a href="/checkout" className={`button ${styles.checkoutButton}`} >Checkout</a> 
             }
             <ul> 
               { props.cart.map((product, i) => renderCartItem(product, i)) }

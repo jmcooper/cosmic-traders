@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Outpost from './outpost/Outpost'
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
         <p>
           Welcome to cosmic traders!
         </p>
+        <Outpost />
       </header>
     </div>
   );

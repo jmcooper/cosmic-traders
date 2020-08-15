@@ -1,27 +1,23 @@
 import React from 'react'
-import PowerCrystalsImage from '../images/power-crystals.png'
+import products from '../products/products.json'
+import { toCurrencyFormat } from '../utils/format-utils'
 
 function Outpost() {
   return (
     <div className="mainLeft">
       <h1 className="section-header">Outpost</h1>
       <ul className="products">
-        <li className="product">
-          <img src={ require('../images/warp-core.png') } alt="warp core"/>
-          <h2 className="title">Warp Core</h2>
-          <div className="priceLine">
-            <h3 className="price">$29,995</h3>
-            <button className="button">Add to cart</button>
-          </div>
-        </li>
-        <li className="product">
-          <img src={ PowerCrystalsImage } alt="Power Crystals"/>
-          <h2 className="title">Power Crystals</h2>
-          <div className="priceLine">
-            <h3 className="price">$1,995</h3>
-            <button className="button">Add to cart</button>
-          </div>
-        </li>
+        { products.map( (product) => { return (
+          <li className="product">         
+            <img src={ require(`../images/${product.image}`) } alt="warp core"/>
+            <h2 className="title">{ product.name }</h2>
+            <div className="priceLine">
+              <h3 className="price">{ toCurrencyFormat(product.price) }</h3>
+              <button className="button">Add to cart</button>
+            </div>
+          </li>
+          )}
+        )}
       </ul>
     </div>
   )

@@ -1,9 +1,9 @@
 .mainLeft {
   flex-grow: 1;
-  min-width: 900px;
   margin-right: 10px;
 }
 
 .rightSidebar {
-  min-width:400px;
+  width:360px;
+  margin-left: 20px;
 }

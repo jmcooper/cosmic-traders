@@ -1,41 +1,10 @@
 import React, { useState } from 'react'
 
-import Cart from './Cart'
+import Cart from './cart/Cart'
 import Address from './Address/Address'
 import styles from './Checkout.module.css'
+import products from '../products/products.json'
 
-let products = [
-  {
-    name: 'Double-Retro Laser Blammers',
-    price: 5999,
-    image: 'base-rocket.png'
-  },
-  {
-    name: 'Power Crystals',
-    price: 1999,
-    image: 'head-cyclops-shredder.png'
-  },
-  {
-    name: 'Warp Core',
-    price: 29995,
-    image: 'base-spring.png'
-  },
-  {
-    name: 'Warp Core',
-    price: 29995,
-    image: 'base-spring.png'
-  },
-  {
-    name: 'Warp Core',
-    price: 29995,
-    image: 'base-spring.png'
-  },
-  {
-    name: 'Warp Core',
-    price: 29995,
-    image: 'base-spring.png'
-  },
-]
 function Checkout() {
   let emptyAddress = {name: '', address: '', city:'', state:'', postalCode:''}
   let [ addresses, setAddresses ] = useState(
@@ -53,7 +22,7 @@ function Checkout() {
 
   return (
     <div className={styles.checkout}>
-      <h1 className={`section-header ${styles.sectionHeader}`}>Cart</h1>
+      <h1 className={`section-header ${styles.sectionHeader}`}>Checkout</h1>
       <Cart cart={products}/>
       <h2 className={`section-header ${styles.sectionHeader}`}>Shipping Address</h2>
       <Address address={addresses.shippingAddress} onAddressUpdated={updateShippingAddress} />

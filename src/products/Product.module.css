@@ -1,28 +1,33 @@
 .product {
   display: flex;
-  background-color:#353941;
-  flex-direction: column;
   align-items: center;
-  padding: 20px 30px;
-  justify-content:space-between;
-}
-
-.title {
+  justify-content: center; 
+  text-align: center;
   font-size: 18px;
+  margin: 0;
 }
 
-.product img {
-  width: 150px;
+.productImage {
+  width: 100%;
 } 
 
-.priceLine {
-  display: flex;
-  font-size: 22px;
-  justify-content: space-between;
-  width:100%;
-  margin:10px;
+.productDetails, .productDetails .title {
+  font-family: nasalization-light;
+  font-size: 18px;
+  text-align: center;
+  margin: 0;
 }
 
-.price {
-  margin:0;
+.product .addToCart {
+  display: none;
+}
+
+.product:hover .productImage {
+  opacity: .2;
+}
+
+.product:hover .addToCart {
+  display: block;
+  position: absolute;
+  z-index: 1;
 }

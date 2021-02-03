@@ -1,41 +1,8 @@
 import React, { useState } from 'react'
-import ProductList from './products/ProductList'
+import ProductList from '../products/ProductList'
 import styles from './Outpost.module.css'
-import Cart from './checkout/Cart'
-
-
-let products = [
-  {
-    name: 'Double-Retro Laser Blammers',
-    price: 5999,
-    image: 'base-rocket.png'
-  },
-  {
-    name: 'Power Crystals',
-    price: 1999,
-    image: 'head-cyclops-shredder.png'
-  },
-  {
-    name: 'Warp Core',
-    price: 29995,
-    image: 'base-spring.png'
-  },
-  {
-    name: 'Warp Core',
-    price: 29995,
-    image: 'base-spring.png'
-  },
-  {
-    name: 'Warp Core',
-    price: 29995,
-    image: 'base-spring.png'
-  },
-  {
-    name: 'Warp Core',
-    price: 29995,
-    image: 'base-spring.png'
-  },
-]
+import Cart from '../checkout/cart/Cart'
+import products from '../products/products.json'
 
 function Outpost() {
   const [cart, setCart] = useState([])

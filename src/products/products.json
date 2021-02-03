@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Warp Core",
+    "price": 299995,
+    "image": "warp-core.png"
+  },
+  {
+    "name": "Radar Array",
+    "price": 19999,
+    "image": "radar-array.png"
+  },
+  {
+    "name": "Cryo Chamber",
+    "price": 89995,
+    "image": "cryo-chamber.png"
+  },
+  {
+    "name": "Booster Rocket",
+    "price": 32999,
+    "image": "booster-rocket.png"
+  },
+  {
+    "name": "Teleporter",
+    "price": 199995,
+    "image": "teleporter.png"
+  },
+  {
+    "name": "Universal Translator",
+    "price": 9995,
+    "image": "universal-translator.png"
+  },
+  {
+    "name": "Targeting Viewport",
+    "price": 25999,
+    "image": "targeting-viewport.png"
+  },
+  {
+    "name": "Jetpack",
+    "price": 9599,
+    "image": "jetpack.png"
+  }
+]
